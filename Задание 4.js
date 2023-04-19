@@ -33,11 +33,14 @@ Lamp.prototype = new Electric();
 const lamp = new Lamp();
 
 // (3) как посчитать сумму мощностей? должно быть что-то вроде этого? :
+let arr = function () {
+   let sum = 0;
+   if (this.enabled === true) {
+      let sum = sum + this.power;
+   } if (this.enabled === false) {
+      let sum = sum;
+   } return sum;
+}
 
-// function count(){
-//   if (this.enabled === true){
-//     let sum = this.power + this.power;
-//     return sum;
-//   }
-// }
-// count();
+comp.enabled(true);
+console.log(arr);
