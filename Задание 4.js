@@ -17,8 +17,10 @@ function Computer(name, power, color, processor) {
 
 Computer.prototype = new Electric();
 
-function Lamp(bright) {
-   this.bright = bright;
+function Lamp(name, power, color, bright) {
+    this.name = name,
+      this.power = power,
+      this.color = color,this.bright = bright;
 }
 
 Lamp.prototype = new Electric();
@@ -37,7 +39,16 @@ const lamp = new Electric('Lamp', 20, 'grey');
 
 comp.Enabled();
 lamp.Enabled();
-console.log(comp.getPower() + lamp.getPower());
+// console.log(comp.getPower() + lamp.getPower());
 
+function sum(arr) {
+   let result = 0
+   arr.forEach((item) => {
+      result += item.getPower()
+   })
+   return result;
+}
+
+console.log(sum([comp, lamp]))
 
 
